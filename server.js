@@ -31,7 +31,7 @@ app.set("view engine", "handlebars");
 app.use(routes);
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/webScraper";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://<dbuser>:<dbpassword>@ds053449.mlab.com:53449/heroku_4hhqpfj6";
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build/'));
@@ -41,7 +41,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Connect to the Mongo DB
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI || "mongodb://<dbuser>:<dbpassword>@ds053449.mlab.com:53449/heroku_4hhqpfj6");
 
 // Listen on the port
 app.listen(PORT, function () {
