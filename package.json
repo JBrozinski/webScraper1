@@ -19,5 +19,14 @@
     "mongoose": "^5.1.6"
   },
   "keywords": [],
-  "description": ""
+  "description": "BitCoin Magazine Web Scraper",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JBrozinski/webScraper1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JBrozinski/webScraper1/issues"
+  },
+  "homepage": "https://github.com/JBrozinski/webScraper1#readme"
 }
