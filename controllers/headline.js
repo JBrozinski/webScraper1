@@ -1,5 +1,4 @@
-// Controller for our headlines
-// ============================
+
 var db = require("../models");
 
 module.exports = {

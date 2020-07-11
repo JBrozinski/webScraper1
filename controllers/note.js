@@ -1,5 +1,4 @@
-// Controller for our notes
-// ========================
+
 var db = require("../models");
 
 module.exports = {
