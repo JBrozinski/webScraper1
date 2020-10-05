@@ -29,8 +29,8 @@ $(document).ready(function () {
     var cardHeader = $("<div class='card-header'>").append(
       $("<h3>").append(
         $("<a class='article-link' target='_blank' rel='noopener noreferrer'>")
-          .attr("href", article.url)
           .text(article.headline)
+          .attr("href", article.url)
         // $("<a class='btn btn-success save'>Save Article</a>")
       )
     );
