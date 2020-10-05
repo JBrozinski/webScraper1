@@ -1,6 +1,5 @@
 /* global bootbox */
 $(document).ready(function () {
-
   var articleContainer = $(".article-container");
   $(document).on("click", ".btn.save", handleArticleSave);
   $(document).on("click", ".scrape-new", handleArticleScrape);
@@ -31,8 +30,8 @@ $(document).ready(function () {
       $("<h3>").append(
         $("<a class='article-link' target='_blank' rel='noopener noreferrer'>")
           .attr("href", article.url)
-          .text(article.headline),
-        $("<a class='btn btn-success save'>Save Article</a>")
+          .text(article.headline)
+        // $("<a class='btn btn-success save'>Save Article</a>")
       )
     );
 
@@ -55,9 +54,9 @@ $(document).ready(function () {
         "</div>",
         "<div class='card-body text-center'>",
         "<h4><a class='scrape-new'>Scrape Articles</a></h4>",
-        "<h4><a href='/saved'>Go to Saved Articles</a></h4>",
+        // "<h4><a href='/saved'>Go to Saved Articles</a></h4>",
         "</div>",
-        "</div>"
+        "</div>",
       ].join("")
     );
     // Appending this data to the page
@@ -65,19 +64,15 @@ $(document).ready(function () {
   }
 
   function handleArticleSave() {
-    var articleToSave = $(this)
-      .parents(".card")
-      .data();
+    var articleToSave = $(this).parents(".card").data();
 
-    $(this)
-      .parents(".card")
-      .remove();
+    $(this).parents(".card").remove();
 
     articleToSave.saved = true;
     $.ajax({
       method: "PUT",
       url: "/api/headlines/" + articleToSave._id,
-      data: articleToSave
+      data: articleToSave,
     }).then(function (data) {
       if (data.saved) {
         initPage();
