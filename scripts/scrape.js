@@ -1,10 +1,7 @@
-
 var axios = require("axios");
 var cheerio = require("cheerio");
 
-
 var scrape = function () {
-
   return axios.get("https://bitcoinmagazine.com/").then(function (res) {
     var $ = cheerio.load(res.data);
     console.log("scraping");
@@ -12,32 +9,21 @@ var scrape = function () {
     var articles = [];
 
     $(".post").each(function (i, element) {
+      var head = $(this).find(".post-title").text().trim();
 
-      var head = $(this)
-        .find(".post-title")
-        .text()
-        .trim();
+      var url = $(this).find(".post-excerpt");
 
-      var url = $(this)
-        .find(".post-excerpt")
-
-      var sum = $(this)
-        .find("p")
-        .text()
-        .trim();
+      var sum = $(this).find("p").text().trim();
 
       if (head && sum && url) {
-
         var headNeat = head.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
         var sumNeat = sum.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
-
 
         var dataToAdd = {
           headline: headNeat,
           summary: sumNeat,
-          url: "https://bitcoinmagazine.com/" + url
+          url: "https://bitcoinmagazine.com/",
         };
-
 
         articles.push(dataToAdd);
       }
