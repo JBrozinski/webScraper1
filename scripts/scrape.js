@@ -11,7 +11,7 @@ var scrape = function () {
     $(".post").each(function (i, element) {
       var head = $(this).find(".post-title").text().trim();
 
-      var url = $(this).find("a href").text().trim();
+      var url = $(this).find("a").text().trim();
 
       var sum = $(this).find("p").text().trim();
 
