@@ -29,7 +29,7 @@ $(document).ready(function () {
     var cardHeader = $("<div class='card-header'>").append(
       $("<h3>").append(
         $("<a class='article-link' target='_blank' rel='noopener noreferrer'>")
-          .attr("href", article.url)
+          .attr("href", "bitcoinmagazine.com/articles")
           .text(article.headline)
         // $("<a class='btn btn-success save'>Save Article</a>")
       )
