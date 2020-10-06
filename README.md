@@ -1,6 +1,8 @@
-BitCoin Magazine Web Scraper
+# BitCoin Magazine Web Scraper
 
 Need to keep up to date on the latest news concerning the world's leading cryto currency? Let this site help you. Bitcoin Magazine Scraper allows you to scrape headlines so you can stay in the know.
+
+[Click Here](https://webscraper3000.herokuapp.com/) to see the live project!
 
 Instructions:
 
